@@ -20,8 +20,8 @@ const Card = () => {
   const teamleadToggle = () => {
     let isTeamlead = !user.contributionToTheDevelopment.indexOf("Тимлид");
     console.log("isTeamlead", isTeamlead);
-    return isTeamlead && <Badge text="Teamlead" color="danger" />;
-  };
+    return isTeamlead && <Badge text="Teamlead" color="danger" />
+  }
 
   if (user) {
     return (

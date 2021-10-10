@@ -185,7 +185,7 @@ function getAllDevelopers() {
   return new Promise((resolve) => {
     window.setTimeout(() => {
       resolve(developers)
-    }, 0)
+    }, 2000)
   })
 }
 
