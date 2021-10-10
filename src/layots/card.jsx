@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
+import API from "../API/index.js";
 import Spinner from "../components/spinner";
-import SocialIconsList from "./socialIconsList";
-import Button from "./button";
-import TechnologiesList from "./technologiesList";
-import API from "../API/index";
-import Badge from "./badge";
+import SocialIconsList from "../components/socialIconsList.jsx";
+import Button from "../components/button.jsx";
+import TechnologiesList from "../components/technologiesList.jsx";
+import Badge from "../components/badge.jsx";
+import { addToFavorites } from "../components/developerСard";
 
 const Card = () => {
   const params = useParams();
-  const { userId } = params;
+  const { developerId } = params;
   const [user, setUser] = useState();
-
   useEffect(() => {
-    API.getById(userId).then((data) => {
+    API.getById(developerId).then((data) => {
       setUser(data);
     });
-  }, []);
+  }, [developerId]);
 
   const teamleadToggle = () => {
     let isTeamlead = !user.contributionToTheDevelopment.indexOf("Тимлид");
@@ -31,15 +31,13 @@ const Card = () => {
           <div className="card mt-4">
             <div className="row">
               <div className="col-lg-4 col-md-6 col-12">
-                <a href="javascript:;">
-                  <div className="p-3">
-                    <img
-                      className="w-100 border-radius-md shadow-lg"
-                      src={`${process.env.PUBLIC_URL}/images/photoDevelopers/${user.photo}`}
-                      alt="image"
-                    />
-                  </div>
-                </a>
+                <div className="p-3">
+                  <img
+                    className="w-100 border-radius-md shadow-lg"
+                    src={`${process.env.PUBLIC_URL}/images/photoDevelopers/${user.photo}`}
+                    alt="Фотография разработчика"
+                  />
+                </div>
               </div>
               <div className="col-lg-8 col-md-6 col-12">
                 <div className="card-body">
@@ -76,6 +74,7 @@ const Card = () => {
                       color="danger"
                       nameBtn="Добавить в избранное"
                       typeForm="sharp"
+                      func={() => addToFavorites(user._id)}
                     />
                   </div>
                 </div>

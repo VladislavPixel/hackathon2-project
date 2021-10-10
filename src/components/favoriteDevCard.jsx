@@ -38,7 +38,7 @@ const FavoriteDevCard = ({
             color="danger"
             nameBtn="Удалить"
             typeForm="remove"
-            onClick={() => removeFromFavorites(_id)}
+            func={() => removeFromFavorites(_id)}
           />
         </div>
       </div>

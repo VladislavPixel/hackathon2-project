@@ -10,13 +10,13 @@ const developers = [
     linksToSocialNetworks: [
       {
         _id: "2q",
-        name: "telegram",
-        link: "Ссылка на инстаграм",
+        name: "instagram",
+        link: "https://www.instagram.com/vladislav.sergeevich1/",
       },
       {
         _id: "2w",
-        name: "vkontakte",
-        link: "Ссылка на Вконтакте",
+        name: "facebook",
+        link: "https://www.facebook.com/vladislav.shtukarev.9/",
       },
       {
         _id: "2e",
@@ -25,7 +25,7 @@ const developers = [
       },
       {
         _id: "2r",
-        name: "WhatSapp",
+        name: "whatsapp",
         link: "Телефон WhatSapp",
       },
     ],
@@ -60,17 +60,17 @@ const developers = [
     surname: "Булат",
     age: "30",
     infoAboutMe:
-      "Frontend разработчик. Быстро решаю любую поставленную задачу. Находчивый, душа компани.",
+      "Frontend разработчик. Быстро решаю любую поставленную задачу. Находчивый, душа компании.",
     photo: "bulat.png",
     linksToSocialNetworks: [
       {
         _id: "2q",
-        name: "intagram",
+        name: "instagram",
         link: "Ссылка на инстаграм",
       },
       {
         _id: "2w",
-        name: "vkontakte",
+        name: "facebook",
         link: "Ссылка на Вконтакте",
       },
       {
@@ -80,7 +80,7 @@ const developers = [
       },
       {
         _id: "2r",
-        name: "WhatSapp",
+        name: "whatsapp",
         link: "Телефон WhatSapp",
       },
     ],
@@ -125,7 +125,7 @@ const developers = [
       },
       {
         _id: "2w",
-        name: "vkontakte",
+        name: "facebook",
         link: "Ссылка на Вконтакте",
       },
       {
@@ -135,7 +135,7 @@ const developers = [
       },
       {
         _id: "2r",
-        name: "WhatSapp",
+        name: "whatsapp",
         link: "Телефон WhatSapp",
       },
     ],
@@ -167,18 +167,18 @@ const developers = [
 ];
 
 function getAllDevelopers() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     window.setTimeout(() => {
-      resolve(developers);
-    }, 0);
-  });
+      resolve(developers)
+    }, 0)
+  })
 }
 
 const getById = (id) =>
   new Promise((resolve) => {
     window.setTimeout(function () {
-      resolve(developers.find((user) => user._id === id));
-    }, 1000);
-  });
+      resolve(developers.find((user) => user._id === id))
+    }, 1000)
+  })
 
-export { getAllDevelopers, getById };
+export { getAllDevelopers, getById }

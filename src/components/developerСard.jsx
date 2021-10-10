@@ -1,24 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Button from "./button.jsx";
 import Badge from "./badge.jsx";
 
+export const addToFavorites = async (id) => {
+  const localFavorites = window.localStorage.getItem("favoritesDevs");
+
+  const favoritesDevs = await JSON.parse(localFavorites);
+
+  if (!favoritesDevs) {
+    window.localStorage.setItem("favoritesDevs", JSON.stringify([id]));
+  } else {
+    if (favoritesDevs.includes(id)) return;
+    window.localStorage.setItem(
+      "favoritesDevs",
+      JSON.stringify([...favoritesDevs, id])
+    );
+  }
+};
+
 const DeveloperCard = ({ _id, name, surname, age, photo, infoAboutMe }) => {
-  const addToFavorites = async (id) => {
-    const localFavorites = window.localStorage.getItem("favoritesDevs");
+  const history = useHistory();
+  function openDeveloper() {
+    history.push(`/developerId:${_id}`);
+  }
 
-    const favoritesDevs = await JSON.parse(localFavorites);
-
-    if (!favoritesDevs) {
-      window.localStorage.setItem("favoritesDevs", JSON.stringify([id]));
-    } else {
-      if (favoritesDevs.includes(id)) return;
-      window.localStorage.setItem(
-        "favoritesDevs",
-        JSON.stringify([...favoritesDevs, id])
-      );
-    }
-  };
   return (
     <div className="card-developer">
       <div className="card-developer__column">
@@ -37,14 +43,19 @@ const DeveloperCard = ({ _id, name, surname, age, photo, infoAboutMe }) => {
         <div className="card-developer__age">{`Возраст: ${age}`}</div>
         <div className="card-developer__info">{infoAboutMe}</div>
         <div className="card-developer__btns">
-          <Link to={`/users/${_id}`}>
-            <Button color="primary" nameBtn="Открыть" typeForm="rounded" />
+          <Link to={`/${_id}`}>
+            <Button
+              func={openDeveloper}
+              color="primary"
+              nameBtn="Открыть"
+              typeForm="rounded"
+            />
           </Link>
           <Button
             color="success"
             nameBtn="Добавить в избранное"
             typeForm="sharp"
-            onClick={() => addToFavorites(_id)}
+            func={() => addToFavorites(_id)}
           />
         </div>
       </div>

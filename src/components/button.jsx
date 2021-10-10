@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ color, nameBtn, typeForm, onClick }) => {
+const Button = ({ func, color, nameBtn, typeForm }) => {
   function getFormBtn(form) {
     const styles = { fontSize: "20px" };
     if (form === "sharp") {
@@ -13,10 +13,10 @@ const Button = ({ color, nameBtn, typeForm, onClick }) => {
   }
   return (
     <button
+      onClick={func}
       style={getFormBtn(typeForm)}
       type="button"
       className={`btn btn-${color}`}
-      onClick={onClick}
     >
       {nameBtn}
     </button>
