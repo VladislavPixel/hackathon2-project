@@ -30,27 +30,31 @@ const developers = [
       },
     ],
     contributionToTheDevelopment:
-      "Тимлид. Создавал главную страницу; Fake.api; компонент - NavBar, CartDeveloper, button, budge;",
+      "Тимлид. Создавал главную страницу; Fake.api; компоненты - NavBar, CartDeveloper, button, badge, progress; Интеграция и сборка проекта.",
     technologies: [
       {
         _id: "3q",
         name: "HTML",
         percentageOfOwnership: "100",
+				color: 'info'
       },
       {
         _id: "3w",
         name: "CSS",
         percentageOfOwnership: "100",
+				color: 'success'
       },
       {
         _id: "3e",
         name: "JavaScript",
         percentageOfOwnership: "70",
+				color: 'warning'
       },
       {
         _id: "3r",
         name: "React JS",
         percentageOfOwnership: "70",
+				color: 'danger'
       },
     ],
     favorites: false,
@@ -86,27 +90,31 @@ const developers = [
       },
     ],
     contributionToTheDevelopment:
-      "Делает страницу конкретного человека. Разрабатывал компонент - Progress",
+      "Делает страницу конкретного человека.",
     technologies: [
       {
         _id: "3q",
         name: "HTML",
-        percentageOfOwnership: "100",
+        percentageOfOwnership: "90",
+				color: 'info'
       },
       {
         _id: "3w",
         name: "CSS",
-        percentageOfOwnership: "100",
+        percentageOfOwnership: "90",
+				color: 'success'
       },
       {
         _id: "3e",
         name: "JavaScript",
-        percentageOfOwnership: "70",
+        percentageOfOwnership: "65",
+				color: 'warning'
       },
       {
         _id: "3r",
         name: "React JS",
-        percentageOfOwnership: "70",
+        percentageOfOwnership: "55",
+				color: 'danger'
       },
     ],
     favorites: false,
@@ -148,21 +156,25 @@ const developers = [
         _id: "3q",
         name: "HTML",
         percentageOfOwnership: "100",
+				color: 'info'
       },
       {
         _id: "3w",
         name: "CSS",
-        percentageOfOwnership: "100",
+        percentageOfOwnership: "45",
+				color: 'success'
       },
       {
         _id: "3e",
         name: "JavaScript",
-        percentageOfOwnership: "70",
+        percentageOfOwnership: "91",
+				color: 'warning'
       },
       {
         _id: "3r",
         name: "React JS",
-        percentageOfOwnership: "70",
+        percentageOfOwnership: "83",
+				color: 'danger'
       },
     ],
     favorites: false,

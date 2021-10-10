@@ -1,0 +1,12 @@
+.progress-block{
+	margin-bottom: 15px;
+}
+.progress-block__title{
+	font-size: 25px;
+}
+.progress-bar{
+	font-size: 15px;
+}
+.progress{
+	height: 20px;
+}
