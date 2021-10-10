@@ -1,6 +1,7 @@
-import React from "react";
-import "../style/favorites.css";
-import Button from "./button";
+import React from "react"
+import "../style/favorites.css"
+import Button from "./button"
+import PropTypes from 'prop-types'
 
 const FavoriteDevCard = ({
   _id,
@@ -10,7 +11,6 @@ const FavoriteDevCard = ({
   infoAboutMe,
   photo,
   contributionToTheDevelopment,
-  technologies,
   removeFromFavorites,
 }) => {
   return (
@@ -43,7 +43,18 @@ const FavoriteDevCard = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FavoriteDevCard;
+FavoriteDevCard.propTypes = {
+	_id: PropTypes.string,
+	name: PropTypes.string,
+	surname: PropTypes.string,
+	age: PropTypes.string,
+	infoAboutMe: PropTypes.string,
+	photo: PropTypes.string,
+	contributionToTheDevelopment: PropTypes.string,
+	removeFromFavorites: PropTypes.func
+}
+
+export default FavoriteDevCard

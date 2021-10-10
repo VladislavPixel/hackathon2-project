@@ -156,3 +156,8 @@ h3 {
 .single_advisor_profile:focus .single_advisor_details_info p {
   color: #ffffff;
 }
+.favorites__title-no{
+	padding: 20px;
+	font-size: 40px;
+	text-align: center;
+}

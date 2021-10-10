@@ -1,50 +1,50 @@
-import React, { useEffect, useState } from "react";
-import FavoriteDevCard from "../components/favoriteDevCard";
-import Spinner from "../components/spinner";
-import { getById } from "../API/fake.api/developers.api";
+import React, { useEffect, useState } from "react"
+import FavoriteDevCard from "../components/favoriteDevCard"
+import Spinner from "../components/spinner"
+import { getById } from "../API/fake.api/developers.api"
 
 const FavoritesUsers = () => {
-  const [loading, setLoading] = useState(false);
-  const [favorites, setFavorites] = useState([]);
+  const [loading, setLoading] = useState(false)
+  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     async function fetchData() {
-      const localFavorites = window.localStorage.getItem("favoritesDevs");
+      const localFavorites = window.localStorage.getItem("favoritesDevs")
 
-      if (!localFavorites) return;
+      if (!localFavorites) return
 
-      const favoritesDevs = await JSON.parse(localFavorites);
+      const favoritesDevs = await JSON.parse(localFavorites)
 
       if (favoritesDevs.length) {
-        const devs = [];
-        setLoading(true);
+        const devs = []
+        setLoading(true)
 
         favoritesDevs.forEach(async (devId) => {
-          const dev = await getById(devId);
-          devs.push(dev);
+          const dev = await getById(devId)
+          devs.push(dev)
 
-          if (devs.length === favoritesDevs.length) setFavorites(devs);
-          setLoading(false);
-        });
+          if (devs.length === favoritesDevs.length) setFavorites(devs)
+          setLoading(false)
+        })
       }
     }
 
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   const removeFromFavorites = (id) => {
     const favoritesDevs = JSON.parse(
       window.localStorage.getItem("favoritesDevs")
-    );
+    )
     window.localStorage.setItem(
       "favoritesDevs",
       JSON.stringify(favoritesDevs.filter((devId) => devId !== id))
-    );
+    )
     setFavorites(favorites.filter((dev) => dev._id !== id));
-  };
+  }
 
-  if (loading) return <Spinner />;
-  if (!favorites.length) return <h1>Favorites list is empty</h1>;
+  if (loading) return <Spinner />
+  if (!favorites.length) return <h2 className="favorites__title-no">Favorites list is empty</h2>
 
   return (
     <>
@@ -77,7 +77,7 @@ const FavoritesUsers = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default FavoritesUsers;
+export default FavoritesUsers

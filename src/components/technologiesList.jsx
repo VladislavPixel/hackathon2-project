@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 import Progress from "./progress.jsx"
-
+import PropTypes from 'prop-types'
 
 const TechnologiesList = ({ technologies }) => {
 	console.log(technologies)
@@ -13,4 +13,8 @@ const TechnologiesList = ({ technologies }) => {
 	)
 }
 
-export default TechnologiesList;
+TechnologiesList.propTypes = {
+	technologies: PropTypes.array
+}
+
+export default TechnologiesList

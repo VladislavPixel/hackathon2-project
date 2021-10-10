@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import PropTypes from 'prop-types'
 
 const Button = ({ func, color, nameBtn, typeForm }) => {
   function getFormBtn(form) {
@@ -20,7 +21,14 @@ const Button = ({ func, color, nameBtn, typeForm }) => {
     >
       {nameBtn}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+Button.propTypes = {
+	func: PropTypes.func,
+	color: PropTypes.string,
+	nameBtn: PropTypes.string,
+	typeForm: PropTypes.string
+}
+
+export default Button

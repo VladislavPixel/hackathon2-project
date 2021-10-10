@@ -9,14 +9,14 @@ import Badge from "../components/badge.jsx";
 import { addToFavorites } from "../components/developerСard";
 
 const Card = () => {
-  const params = useParams();
-  const { developerId } = params;
-  const [user, setUser] = useState();
+  const params = useParams()
+  const { developerId } = params
+  const [user, setUser] = useState()
   useEffect(() => {
     API.getById(developerId).then((data) => {
-      setUser(data);
-    });
-  }, [developerId]);
+      setUser(data)
+    })
+  }, [developerId])
 
   const teamleadToggle = () => {
     let isTeamlead = !user.contributionToTheDevelopment.indexOf("Тимлид");
@@ -83,8 +83,9 @@ const Card = () => {
           </div>
         </div>
       </div>
-    );
+    )
   }
-  return <Spinner />;
-};
-export default Card;
+  return <Spinner />
+}
+
+export default Card

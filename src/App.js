@@ -1,12 +1,12 @@
-import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-import NavBar from "./components/navBar.jsx";
-import HomePage from "./layots/homePage.jsx";
-import FavoritesDevelopers from "./layots/favoritesDevelopers";
-import Card from "./layots/card";
-import NotFaundPage from "./layots/notFaundPage.jsx";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/css/bootstrap.css";
+import React from "react"
+import { Route, Switch, Redirect } from "react-router-dom"
+import NavBar from "./components/navBar.jsx"
+import HomePage from "./layots/homePage.jsx"
+import FavoritesDevelopers from "./layots/favoritesDevelopers"
+import Card from "./layots/card"
+import NotFaundPage from "./layots/notFaundPage.jsx"
+import "bootstrap-icons/font/bootstrap-icons.css"
+import "bootstrap/dist/css/bootstrap.css"
 
 function App() {
   return (
@@ -20,6 +20,6 @@ function App() {
         <Redirect to="/notfaund" />
       </Switch>
     </React.Fragment>
-  );
+  )
 }
-export default App;
+export default App

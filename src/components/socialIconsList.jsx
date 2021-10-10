@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import PropTypes from 'prop-types'
 
 const SocialIconsList = ({ iconList }) => {
 	return (
@@ -30,4 +31,8 @@ const SocialIconsList = ({ iconList }) => {
 	)
 }
 
-export default SocialIconsList;
+SocialIconsList.propTypes = {
+	iconList: PropTypes.array
+}
+
+export default SocialIconsList

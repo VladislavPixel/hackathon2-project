@@ -89,7 +89,7 @@ const developers = [
       },
     ],
     contributionToTheDevelopment:
-      "Делает страницу конкретного человека.",
+      "Разрабатывал страницу Developer-card.",
     technologies: [
       {
         _id: "3q",

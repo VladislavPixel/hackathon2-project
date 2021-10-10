@@ -1,5 +1,6 @@
 import React from 'react'
 import '../style/progress.css'
+import PropTypes from 'prop-types'
 
 const Progress = ({scalePercentage, name, color}) => {
 	return(
@@ -10,6 +11,12 @@ const Progress = ({scalePercentage, name, color}) => {
 			</div>
 		</div>
 	)
+}
+
+Progress.propTypes = {
+	scalePercentage: PropTypes.string,
+	name: PropTypes.string,
+	color: PropTypes.string
 }
 
 export default Progress

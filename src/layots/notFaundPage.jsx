@@ -1,7 +1,6 @@
 import React from 'react'
 import '../style/not-faund.css'
 
-
 const NotFaundPage = () => {
 	return(
 		<div className="not-faund">

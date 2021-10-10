@@ -8,7 +8,7 @@ const HomePage = () => {
   const [developers, setDevelopers] = useState()
   useEffect(() => {
     API.getAllDevelopers().then((data) => {
-      setDevelopers(data);
+      setDevelopers(data)
     })
   })
   return(
