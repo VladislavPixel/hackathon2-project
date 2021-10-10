@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "./components/navBar.jsx";
 import HomePage from "./layots/homePage.jsx";
-import FavoritesUsers from "./layots/favoritesUsers";
+import FavoritesDevelopers from "./layots/favoritesDevelopers";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/favorites" component={FavoritesUsers} />
+        <Route path="/favorites" component={FavoritesDevelopers} />
         <Redirect to="/notfaund" />
       </Switch>
     </React.Fragment>
