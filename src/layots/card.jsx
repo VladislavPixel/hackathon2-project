@@ -5,6 +5,7 @@ import Spinner from "../components/spinner"
 import SocialIconsList from "../components/socialIconsList.jsx"
 import Button from "../components/button.jsx"
 import TechnologiesList from "../components/technologiesList.jsx"
+import Badge from "../components/badge.jsx"
 
 const Card = () => {
   const params = useParams()
@@ -15,6 +16,12 @@ const Card = () => {
       setUser(data)
     })
   }, [developerId])
+
+  const teamleadToggle = () => {
+    let isTeamlead = !user.contributionToTheDevelopment.indexOf("Тимлид");
+    console.log("isTeamlead", isTeamlead);
+    return isTeamlead && <Badge text="Teamlead" color="danger" />;
+  };
 
   if (user) {
     return (
@@ -35,8 +42,7 @@ const Card = () => {
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <h1 className="text-center mt-3">
-                      {user.name} {user.surname}{" "}
-                      <span className="badge bg-danger">Teamlead</span>
+                      {user.name} {user.surname} {teamleadToggle()}
                     </h1>
                     <div className="row mb-4">
                       <div className="col-auto">

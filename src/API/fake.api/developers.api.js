@@ -61,7 +61,7 @@ const developers = [
     surname: "Булат",
     age: "30",
     infoAboutMe:
-      "Frontend разработчик. Быстро решаю любую поставленную задачу. Находчивый, душа компани.",
+      "Frontend разработчик. Быстро решаю любую поставленную задачу. Находчивый, душа компании.",
     photo: "bulat.png",
     linksToSocialNetworks: [
       {
