@@ -5,17 +5,24 @@ import SocialIconsList from "./socialIconsList";
 import Button from "./button";
 import TechnologiesList from "./technologiesList";
 import API from "../API/index";
+import Badge from "./badge";
 
 const Card = () => {
   const params = useParams();
   const { userId } = params;
   const [user, setUser] = useState();
-  console.log(user);
+
   useEffect(() => {
     API.getById(userId).then((data) => {
       setUser(data);
     });
   }, []);
+
+  const teamleadToggle = () => {
+    let isTeamlead = !user.contributionToTheDevelopment.indexOf("Тимлид");
+    console.log("isTeamlead", isTeamlead);
+    return isTeamlead && <Badge text="Teamlead" color="danger" />;
+  };
 
   if (user) {
     return (
@@ -38,8 +45,7 @@ const Card = () => {
                 <div className="card-body">
                   <div className="row d-flex justify-content-center">
                     <h1 className="text-center mt-3">
-                      {user.name} {user.surname}{" "}
-                      <span className="badge bg-danger">Teamlead</span>
+                      {user.name} {user.surname} {teamleadToggle()}
                     </h1>
                     <div className="row mb-4">
                       <div className="col-auto">
