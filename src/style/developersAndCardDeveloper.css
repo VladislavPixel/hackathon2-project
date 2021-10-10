@@ -1,0 +1,51 @@
+.developers-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 25px;
+}
+.card-developer{
+	display: flex;
+	flex: 0 1 auto;
+	margin-bottom: 20px;
+}
+.card-developer:last-child{
+	margin-bottom: 0;
+}
+.card-developer__column:first-child{
+	flex: 0 1 20%;
+	margin-right: 20px;
+}
+.card-developer__column:last-child{
+	flex: 1 1 80%;
+}
+.card-developer__photo-dev{
+	position: relative;
+	padding: 0px 0px 100% 0px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.card-developer__photo-dev img{
+	position: absolute;
+	object-fit: cover;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.card-developer__fio{
+	font-size: 27px;
+	margin-bottom: 10px;
+}
+.card-developer__age{
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+.card-developer__info{
+	font-size: 20px;
+	margin-bottom: 25px;
+}
+.card-developer__btns button:first-child{
+	display: inline-block;
+	margin-right: 20px;
+}

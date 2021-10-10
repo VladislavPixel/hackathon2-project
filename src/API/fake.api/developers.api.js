@@ -1,12 +1,11 @@
-
 const developers = [
 	{
 		_id: '1q',
 		name: 'Владислав',
 		surname: 'Штукарев',
 		age: '23',
-		infoAboutMe: 'Верстальщик в университете. Adept JavaScript.',
-		photo: 'Фото Владислава',
+		infoAboutMe: 'Работаю Frontend разработчиком в московском университете. Adept JavaScript. Обожаю все, что связано с веб технологиями. Также бегаю марафоны в свободное от программирования время.',
+		photo: 'vladislav.jpg',
 		linksToSocialNetworks: [
 			{
 				_id: '2q',
@@ -29,7 +28,7 @@ const developers = [
 				link: 'Телефон WhatSapp'
 			}
 		],
-		contributionToTheDevelopment: 'Тимлид. Создавал главную страницу, Fake.api, компонент - NavBar',
+		contributionToTheDevelopment: 'Тимлид. Создавал главную страницу; Fake.api; компонент - NavBar, CartDeveloper, button, budge;',
 		technologies: [
 			{
 				_id: '3q',
@@ -56,11 +55,11 @@ const developers = [
 	},
 	{
 		_id: '1w',
-		name: 'Булат',
+		name: 'Ильин',
 		surname: 'Булат',
 		age: '30',
-		infoAboutMe: 'Frontend разработчик',
-		photo: 'Фото Булата',
+		infoAboutMe: 'Frontend разработчик. Быстро решаю любую поставленную задачу. Находчивый, душа компани.',
+		photo: 'bulat.png',
 		linksToSocialNetworks: [
 			{
 				_id: '2q',
@@ -113,8 +112,8 @@ const developers = [
 		name: 'Максим',
 		surname: 'Онофрийчук',
 		age: '30',
-		infoAboutMe: 'Frontend разработчик',
-		photo: 'Фото Максима',
+		infoAboutMe: 'Frontend разработчик. Мастер своего дела. Командный игрок. Разбираюсь в технологии от А до Я.',
+		photo: 'maksim.jpg',
 		linksToSocialNetworks: [
 			{
 				_id: '2q',
@@ -163,7 +162,6 @@ const developers = [
 		favorites: false
 	}
 ]
-
 
 function getAllDevelopers (){
 	return new Promise((resolve, reject) => {
