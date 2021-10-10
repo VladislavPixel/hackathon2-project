@@ -10,7 +10,7 @@ const HomePage = () => {
     API.getAllDevelopers().then((data) => {
       setDevelopers(data)
     })
-  })
+  }, [])
   return(
 		<React.Fragment>
 			<h1 className="developers-title">Команда разработчиков Хакатон 2. React JS</h1>

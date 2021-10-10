@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import Button from "./button.jsx"
 import Badge from "./badge.jsx"
 import PropTypes from 'prop-types'
@@ -21,11 +21,10 @@ export const addToFavorites = async (id) => {
 }
 
 const DeveloperCard = ({ _id, name, surname, age, photo, infoAboutMe }) => {
-  const history = useHistory()
-  function openDeveloper() {
-    history.push(`/developerId:${_id}`)
-  }
-
+	const history = useHistory()
+	const openDeveloper = () => {
+		history.push(`/home/${_id}`)
+	}
   return (
     <div className="card-developer">
       <div className="card-developer__column">
@@ -44,14 +43,12 @@ const DeveloperCard = ({ _id, name, surname, age, photo, infoAboutMe }) => {
         <div className="card-developer__age">{`Возраст: ${age}`}</div>
         <div className="card-developer__info">{infoAboutMe}</div>
         <div className="card-developer__btns">
-          <Link to={`/${_id}`}>
-            <Button
-              func={openDeveloper}
-              color="primary"
-              nameBtn="Открыть"
-              typeForm="rounded"
-            />
-          </Link>
+					<Button
+						func={openDeveloper}
+						color="primary"
+						nameBtn="Открыть"
+						typeForm="rounded"
+					/>
           <Button
             color="success"
             nameBtn="Добавить в избранное"

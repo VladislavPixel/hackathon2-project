@@ -1,0 +1,16 @@
+.hello-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 70px;
+}
+.hello-container__title{
+	font-size: 50px;
+	text-align: center;
+}
+.hello-container__quote{
+	font-size: 30px;
+}
+.hello-container__author{
+	font-size: 22px;
+}
