@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "./button.jsx";
 import Badge from "./badge.jsx";
 
@@ -36,7 +37,9 @@ const DeveloperCard = ({ _id, name, surname, age, photo, infoAboutMe }) => {
         <div className="card-developer__age">{`Возраст: ${age}`}</div>
         <div className="card-developer__info">{infoAboutMe}</div>
         <div className="card-developer__btns">
-          <Button color="primary" nameBtn="Открыть" typeForm="rounded" />
+          <Link to={`/users/${_id}`}>
+            <Button color="primary" nameBtn="Открыть" typeForm="rounded" />
+          </Link>
           <Button
             color="success"
             nameBtn="Добавить в избранное"

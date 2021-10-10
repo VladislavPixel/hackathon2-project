@@ -174,12 +174,11 @@ function getAllDevelopers() {
   });
 }
 
-function getDevById(id) {
-  return new Promise((resolve, reject) => {
-    window.setTimeout(() => {
-      resolve(developers.find((dev) => dev._id === id));
-    }, 0);
+const getById = (id) =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      resolve(developers.find((user) => user._id === id));
+    }, 1000);
   });
-}
 
-export { getAllDevelopers, getDevById };
+export { getAllDevelopers, getById };
