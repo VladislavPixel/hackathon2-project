@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import FavoriteDevCard from "../components/favoriteDevCard";
-import { getDevById } from "../API/fake.api/developers.api";
+import Spinner from "../components/spinner";
+import { getById } from "../API/fake.api/developers.api";
 
 const FavoritesUsers = () => {
+  const [loading, setLoading] = useState(false);
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -15,12 +17,14 @@ const FavoritesUsers = () => {
 
       if (favoritesDevs.length) {
         const devs = [];
+        setLoading(true);
 
         favoritesDevs.forEach(async (devId) => {
-          const dev = await getDevById(devId);
+          const dev = await getById(devId);
           devs.push(dev);
 
           if (devs.length === favoritesDevs.length) setFavorites(devs);
+          setLoading(false);
         });
       }
     }
@@ -39,6 +43,7 @@ const FavoritesUsers = () => {
     setFavorites(favorites.filter((dev) => dev._id !== id));
   };
 
+  if (loading) return <Spinner />;
   if (!favorites.length) return <h1>Favorites list is empty</h1>;
 
   return (

@@ -1,6 +1,5 @@
 import React from "react";
 import "../style/favorites.css";
-import Badge from "./badge";
 import Button from "./button";
 
 const FavoriteDevCard = ({
@@ -35,9 +34,6 @@ const FavoriteDevCard = ({
           <h2 className="age">Возраст: {age}</h2>
           <p>{contributionToTheDevelopment}</p>
           <p>{infoAboutMe}</p>
-          {technologies.map((t) => (
-            <Badge key={t._id} color="primary" text={t.name} />
-          ))}
           <Button
             color="danger"
             nameBtn="Удалить"
