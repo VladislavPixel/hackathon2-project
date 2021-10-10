@@ -57,7 +57,6 @@ const developers = [
 				color: 'danger'
       },
     ],
-    favorites: false,
   },
   {
     _id: "1w",
@@ -117,7 +116,6 @@ const developers = [
 				color: 'danger'
       },
     ],
-    favorites: false,
   },
   {
     _id: "1e",
@@ -177,7 +175,6 @@ const developers = [
 				color: 'danger'
       },
     ],
-    favorites: false,
   },
 ];
 

@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import API from "../API/index.js"
-import Spinner from "../components/spinner"
-import SocialIconsList from "../components/socialIconsList.jsx"
-import Button from "../components/button.jsx"
-import TechnologiesList from "../components/technologiesList.jsx"
-import Badge from "../components/badge.jsx"
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import API from "../API/index.js";
+import Spinner from "../components/spinner";
+import SocialIconsList from "../components/socialIconsList.jsx";
+import Button from "../components/button.jsx";
+import TechnologiesList from "../components/technologiesList.jsx";
+import Badge from "../components/badge.jsx";
+import { addToFavorites } from "../components/developerСard";
 
 const Card = () => {
-  const params = useParams()
-  const { developerId } = params
-  const [user, setUser] = useState()
+  const params = useParams();
+  const { developerId } = params;
+  const [user, setUser] = useState();
   useEffect(() => {
     API.getById(developerId).then((data) => {
-      setUser(data)
-    })
-  }, [developerId])
+      setUser(data);
+    });
+  }, [developerId]);
 
   const teamleadToggle = () => {
     let isTeamlead = !user.contributionToTheDevelopment.indexOf("Тимлид");
@@ -30,13 +31,13 @@ const Card = () => {
           <div className="card mt-4">
             <div className="row">
               <div className="col-lg-4 col-md-6 col-12">
-                  <div className="p-3">
-                    <img
-                      className="w-100 border-radius-md shadow-lg"
-                      src={`${process.env.PUBLIC_URL}/images/photoDevelopers/${user.photo}`}
-                      alt="Фотография разработчика"
-                    />
-                  </div>
+                <div className="p-3">
+                  <img
+                    className="w-100 border-radius-md shadow-lg"
+                    src={`${process.env.PUBLIC_URL}/images/photoDevelopers/${user.photo}`}
+                    alt="Фотография разработчика"
+                  />
+                </div>
               </div>
               <div className="col-lg-8 col-md-6 col-12">
                 <div className="card-body">
@@ -73,6 +74,7 @@ const Card = () => {
                       color="danger"
                       nameBtn="Добавить в избранное"
                       typeForm="sharp"
+                      func={() => addToFavorites(user._id)}
                     />
                   </div>
                 </div>
@@ -81,8 +83,8 @@ const Card = () => {
           </div>
         </div>
       </div>
-    )
+    );
   }
-  return <Spinner />
-}
-export default Card
+  return <Spinner />;
+};
+export default Card;
